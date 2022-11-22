@@ -1,0 +1,44 @@
+1. Choose directory to where you want to put your project folder.
+
+2. Type in cmd or git bash:
+      django-admin startproject <project_folder_name>
+			
+3. Change directory into the project folder.
+
+4. Type in cmd of git bash, to run the server and ctrl+break or ctrl+c to break.
+			python manage.py runserver
+			
+5. Create a new app by typing:
+			python manage.py startapp <app_name>
+			
+6. Go to your IDE, open folder of project created in number 1, go to settings.py, inside settings.py, go to INSTALLED_APPS list and add your app_name there.
+
+7. Next, go to app_name folder and create new file named views.py
+			Inside views.py, type:
+					from django.http import HttpResponse
+			and add new function:
+					// def <function_name>(<args>):
+					def index(request):
+						return HttpResponse("hello, world!")
+						// or some kind of webpage file e.g html file
+
+8. Create a new file in the app_name folder, name it as urls.py
+			Type:
+					from django.urls import path
+					from . import views
+					
+					urlpatterns = [
+						path("", views.<function_name>, name="<name>")
+						// e.g: path("", views.index, name="index")
+					]
+
+9. Go to main project folder and add new path in urls.py
+			// e.g: <proj_folder_name> > urls.py
+			
+			// edit this line and add "include" on it.
+			from django.urls import include, path
+			
+			edit the urlspattern = [
+				path('admin/', admin.site.urls),
+				path('<app_folder_name>/',)
+			]
