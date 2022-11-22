@@ -42,3 +42,5 @@
 				path('admin/', admin.site.urls),
 				path('<app_folder_name>/',)
 			]
+			
+10. To have a folder for templates create a new folder inside <app_folder>, name it "templates" , inside templates, create a new folder called "<app_folder_name>", and there you will create your html files and other markup languages.
